@@ -11,6 +11,12 @@ address varchar(1000)
 )
 
 select * from longlat_detail
+    
+COPY location_details (company_id, action, longitude, latitude, version, create_who, create_date, change_who, change_date, provinsi, kota, kecamatan, kelurahan, kodepos, address)
+FROM 'D:\saidi\maps\List_Longlat_Vireo ok22.csv'
+DELIMITER ';'
+NULL 'NULL'
+CSV HEADER;
 
 ALTER TABLE longlat_detail 
 ALTER COLUMN longitude TYPE DECIMAL(15, 10),
